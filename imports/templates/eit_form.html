@@ -1,16 +1,16 @@
 <template name="Eit_form">
-        <form>
+        <form id="eit_data_form">
           <label for= "First_Name" >First Name </label>
           <br/>
-          <input type = "text" name= "first_name"/>
+          <input type = "text" name= "first_name" required/>
         <br/>
         <label for="Surname">Surname</label>
         <br/>
-          <input type="text" name= "surname"/>
+          <input type="text" name= "surname" required/>
         <br/>
         <label for="date-of_birth">Date of birth</label>
         <br/>
-          <input type="date" name= "date_of_birth"/>
+          <input type="date" name= "date_of_birth" required/>
         <br/>
         <label for="gender">Gender</label>
         <br/>
@@ -18,7 +18,15 @@
         <input type="radio" name="gender" value="Male"/>Male<br/>
        <label for="country">Country</label>
        <br/>
-       <select name="country"></select>
+       <select name="country" required>
+           {{#each countries}}
+           {{#if default}}
+            <option value="{{name}}" selected="true">{{name}}</option>
+            {{else}}
+            <option value="{{name}}">{{name}}</option>
+            {{/if}}
+            {{/each}}
+       </select>
        <br/>
        <label for="cohort">Corhort Graduation Year</label><br/>
        <select name="cohort" >
