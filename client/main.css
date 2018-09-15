@@ -1,4 +1,8 @@
-body {
-  padding: 10px;
-  font-family: sans-serif;
+body > div{
+  padding: 40px 20px ;
+  border-bottom: 1px solid blue;
+}
+
+table th, table td{
+padding: 10px
 }
