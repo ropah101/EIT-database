@@ -50,6 +50,12 @@ Template.Eit_form.events({
             gender: form.gender.value,
             cohort: form.cohort.value,
         };
-        Meteor.call('eits.insert',data);
+        var id = form.id.value;
+        if(id){
+            Meteor.call('eits.update',id,data);
+        }else{
+            Meteor.call('eits.insert',data);
+        }
+        form.reset();
     }
-})
+});

@@ -19,4 +19,19 @@ Meteor.methods({
         check(data.gender,String)
         Eits.insert(data);
     },
+    'eits.update'(id,data){
+        check(data.first_name,String);
+        check(data.surname,String);
+        check(data.date_of_birth,String);
+        check(data.country,String);
+        check(data.gender,String)
+        Eits.update(
+            id,
+            { $set : data}
+        );
+    },
+    'eits.remove'(id){
+        check(id,String);
+        Eits.remove(id);
+    }
 })

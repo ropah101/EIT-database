@@ -9,7 +9,7 @@
 
         <!-- the form -->
         <div>
-            <button style="float:right;">Delete</button>
+            <button id="deleteEit" style="float:right;">Delete</button>
           </div>
 
           <div>
@@ -22,16 +22,21 @@
                 <th>Date of Birth</th>
                 <th>Country</th>
                 <th>cohort</th>
+                <th></th>
                 </thead>
                 <tbody>
+                    {{#each eits}}
                   <tr>
-                    <td><input type="checkbox"></td>
-                   <td>Tim/Tamary</td>
-                   <td>Male/Female</td>
-                   <td>dd/mm/yyyy</td>
-                   <td>KE/Zim/Nig</td>
-                   <td>2019</td>
+                    <td><input type="checkbox" class="delete-checkbox" value="{{ _id}}"/></td>
+                   <td>{{ first_name}}{{surname}}</td>
+                   <td>{{gender}}</td>
+                   <td>{{date_of_birth}}</td>
+                   <td>{{country}}</td>
+                   <td>{{cohort}}</td>
+                   <td>
+                       <button class="update-eit" id="{{_id}}">Update</button></td>
                   </tr>
+                  {{/each}}
                 </tbody>
             </table>
           </div>
