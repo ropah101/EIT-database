@@ -1,43 +1,53 @@
-
 <head>
-        <title >Eit Database</title>
-      </head>
-       <body>
-        <h1>Eit Database</h1>
+  <title>Eit Database</title>
+</head>
 
+<body>
+  <div class="container">
+    <h1>Eit Database</h1>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
         {{> Eit_form}}
+      </div>
+    </div>
 
-        <!-- the form -->
-        <div>
-            <button id="deleteEit" style="float:right;">Delete</button>
-          </div>
+    <!-- the form -->
+    <h1>Eit Records</h1>
+    <div>
 
-          <div>
-            <table>
-              <thead>
-                <!-- table columns -->
-                <th></th>
-                <th>Full Name</th>
-                <th>Gender</th>
-                <th>Date of Birth</th>
-                <th>Country</th>
-                <th>cohort</th>
-                <th></th>
-                </thead>
-                <tbody>
-                    {{#each eits}}
-                  <tr>
-                    <td><input type="checkbox" class="delete-checkbox" value="{{ _id}}"/></td>
-                   <td>{{ first_name}}{{surname}}</td>
-                   <td>{{gender}}</td>
-                   <td>{{date_of_birth}}</td>
-                   <td>{{country}}</td>
-                   <td>{{cohort}}</td>
-                   <td>
-                       <button class="update-eit" id="{{_id}}">Update</button></td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-            </table>
-          </div>
-       </body>
+      <table class="table table-hover">
+        <thead>
+          <!-- table columns -->
+          <th></th>
+          <th>Full Name</th>
+          <th>Gender</th>
+          <th>Date of Birth</th>
+          <th>Country</th>
+          <th>cohort</th>
+          <th></th>
+        </thead>
+        <tbody>
+          {{#each eits}}
+          <tr>
+            <td><input type="checkbox" class="delete-checkbox" value="{{ _id}}" /></td>
+            <td>{{ first_name}}{{surname}}</td>
+            <td>{{gender}}</td>
+            <td>{{date_of_birth}}</td>
+            <td>{{country}}</td>
+            <td>{{cohort}}</td>
+            <td>
+              <button class="update-eit" id="{{_id}}">Update</button></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+
+      <div>
+        <button id="deleteEit" class="btn btn-danger pull-right">Delete</button>
+      </div>
+    </div>
+  </div>
+
+</body>
